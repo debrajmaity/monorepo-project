@@ -14,13 +14,13 @@
     
     WORKDIR /app
 
-    # # 1. Copy the compiled app code
-    # COPY --from=builder /app/dist/apps/service-a ./dist/apps/service-a
+    # 1. Copy the compiled app code
+    COPY --from=builder /app/dist/apps/service-a ./dist/apps/service-b
     
-    # # 2. Copy the compiled library code
-    # COPY --from=builder /app/dist/libs/my-library ./dist/libs/my-library
+    # 2. Copy the compiled library code
+    COPY --from=builder /app/dist/libs/my-library ./dist/libs/my-library
 
-    COPY --from=builder /app/dist ./dist
+    # COPY --from=builder /app/dist ./dist
     
     # 3. Install only runtime dependencies
     COPY package*.json ./
