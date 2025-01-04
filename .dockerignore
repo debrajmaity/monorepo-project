@@ -1,0 +1,12 @@
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Production
+dist
+*.local
+
+# Misc
+.idea
+.vscode
